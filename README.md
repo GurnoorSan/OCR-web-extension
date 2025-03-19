@@ -1,3 +1,7 @@
+#Chrome extension link
+
+#TBA
+
 # Text Capture OCR Chrome Extension
 
 A Chrome extension that allows users to capture text from images on web pages using OCR (Optical Character Recognition) technology. The extension uses Tesseract.js for OCR processing and supports multiple languages.
@@ -27,7 +31,7 @@ A Chrome extension that allows users to capture text from images on web pages us
 
 1. Clone this repository:
    ```bash
-   git clone 
+   git clone https://github.com/GurnoorSan/OCR-web-extension.git
    ```
 
 2. Download dependencies:
