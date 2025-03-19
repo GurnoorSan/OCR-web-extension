@@ -1,0 +1,156 @@
+/* Ensure text selection is enabled */
+* {
+  user-select: auto !important;
+  -webkit-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+}
+
+.screenshot-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999999;
+  cursor: crosshair;
+  /* Ensure the overlay can receive mouse events */
+  pointer-events: auto !important;
+}
+
+.screenshot-selection {
+  position: absolute;
+  border: 2px solid #1e90ff;
+  background: rgba(30, 144, 255, 0.1);
+  /* Allow events to pass through the selection box */
+  pointer-events: none;
+  /* Ensure the selection box is visible */
+  z-index: 1000000;
+}
+
+.screenshot-overlay.active {
+  cursor: grabbing;
+}
+
+.screenshot-controls {
+  position: fixed;
+  background: rgba(33, 33, 33, 0.85);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000000;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.screenshot-controls button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Extract button */
+.screenshot-controls button.extract-btn {
+  background: #2196F3;
+  color: white;
+}
+
+.screenshot-controls button.extract-btn:hover {
+  background: #1976D2;
+}
+
+/* Cancel button */
+.screenshot-controls button.cancel-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.screenshot-controls button.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure both buttons have the same height */
+.screenshot-controls button.extract-btn,
+.screenshot-controls button.cancel-btn {
+  height: 36px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ocr-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000001;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #1e90ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.loading-progress {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #666;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.language-select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.language-select:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.language-select option {
+  background: #333;
+  color: white;
+} 

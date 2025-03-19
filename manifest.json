@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Text Capture OCR",
+  "version": "1.0",
+  "description": "Capture text from images using OCR and copy to clipboard",
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; worker-src 'self'"
+  },
+  "action": {
+    "default_icon": {
+      "16": "assets/icons/icon_16x16.png",
+      "48": "assets/icons/icon_48x48.png",
+      "128": "assets/icons/icon_128x128.png"
+    },
+    "default_title": "Text Capture OCR"
+  },
+  "background": {
+    "service_worker": "src/js/background.js",
+    "type": "module"
+  },
+  "web_accessible_resources": [{
+    "resources": [
+      "src/lib/tesseract.min.js",
+      "src/lib/worker.min.js",
+      "src/lib/core.min.js",
+      "src/lib/*.wasm",
+      "assets/lang/*.traineddata.gz"
+    ],
+    "matches": ["<all_urls>"]
+  }]
+} 
