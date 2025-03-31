@@ -70,7 +70,3 @@ TBA
 ## License
 
 MIT License
-
-## Credits
-
-- Gurnoor Sandhu
