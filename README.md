@@ -2,9 +2,6 @@
 
 A Chrome extension that allows users to capture text from images on web pages using OCR (Optical Character Recognition) technology. The extension uses Tesseract.js for OCR processing and supports multiple languages.
 
-## Chrome Extension Link 
-
-TBA
 
 ## Features
 
@@ -70,7 +67,3 @@ TBA
 ## License
 
 MIT License
-
-## Credits
-
-- Gurnoor Sandhu
